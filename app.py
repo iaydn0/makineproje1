@@ -8,7 +8,9 @@ st.title("Araç Yakıt Tüketimi (MPG) Tahmini")
 
 # Girdi alanları
 model_year = st.slider("Model Yılı (1970 - 1982)", 1970, 1982, 1976)
-origin = st.selectbox("Üretim Bölgesi", [1, 2, 3])
+origin_label = st.selectbox("Üretim Bölgesi", ["ABD", "Avrupa", "Japonya"])
+origin_mapping = {"ABD": 1, "Avrupa": 2, "Japonya": 3}
+origin = origin_mapping[origin_label]
 acceleration = st.slider("Hızlanma (0-60 mil/sn)", 8.0, 24.8, 15.0)
 
 # Normalize edilmiş değerleri kullan
