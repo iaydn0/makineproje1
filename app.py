@@ -7,12 +7,12 @@ import joblib
 st.title("Araç Yakıt Tüketimi (MPG) Tahmini")
 
 # Girdi alanları
-model_year = st.slider("Model Yılı", 70, 82, 76)
+model_year = st.slider("Model Yılı (1970 - 1982)", 1970, 1982, 1976)
 origin = st.selectbox("Üretim Bölgesi", [1, 2, 3])
 acceleration = st.slider("Hızlanma (0-60 mil/sn)", 8.0, 24.8, 15.0)
 
 # Normalize edilmiş değerleri kullan
-model_year_norm = (model_year - 70) / (82 - 70)
+model_year_norm = (model_year - 1970) / (1982 - 1970)
 origin_norm = (origin - 1) / (3 - 1)
 acceleration_norm = (acceleration - 8.0) / (24.8 - 8.0)
 
